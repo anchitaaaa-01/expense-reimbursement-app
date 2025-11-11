@@ -28,7 +28,7 @@ export default function Home() {
 
   if (isPending) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-950">
         <Loader2 className="w-8 h-8 text-primary animate-spin" />
       </div>
     );
@@ -36,16 +36,23 @@ export default function Home() {
 
   if (session?.user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-950">
         <Loader2 className="w-8 h-8 text-primary animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-900 dark:to-blue-950 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-200/30 dark:bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-96 h-96 bg-indigo-200/30 dark:bg-indigo-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/20 dark:bg-blue-400/5 rounded-full blur-3xl"></div>
+      </div>
+
       {/* Header */}
-      <header className="border-b bg-card">
+      <header className="border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -70,14 +77,14 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4 py-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Streamline Your Expense Management
           </h2>
           
           <p className="text-lg text-muted-foreground mb-8">
-            <span className="text-blue-600 dark:text-blue-400 font-medium">AI-powered chatbot</span> assistance, <span className="text-blue-600 dark:text-blue-400 font-medium">OCR receipt scanning</span>, and <span className="text-blue-600 dark:text-blue-400 font-medium">automated approval</span> workflows 
+            <span className="text-foreground font-bold">AI-powered chatbot</span> assistance, <span className="text-foreground font-bold">OCR receipt scanning</span>, and <span className="text-foreground font-bold">automated approval</span> workflows 
             in one simple platform.
           </p>
           
@@ -114,7 +121,7 @@ export default function Home() {
               description: "Smart approval workflows with role-based access for employees, managers, and administrators."
             }
           ].map((feature, idx) => (
-            <Card key={idx}>
+            <Card key={idx} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-blue-100 dark:border-blue-900/50">
               <CardHeader>
                 <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 mb-4">
                   <feature.icon className="w-6 h-6" />
@@ -151,7 +158,7 @@ export default function Home() {
                 description: "Complete system control: user management, approval rules, company-wide analytics, and chatbot support."
               }
             ].map((role, idx) => (
-              <Card key={idx}>
+              <Card key={idx} className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-blue-100 dark:border-blue-900/50">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <span className="text-2xl">{role.emoji}</span>
@@ -168,7 +175,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t bg-card mt-16">
+      <footer className="border-t bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm mt-16 relative z-10">
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-sm text-muted-foreground">
             <p>© 2024 ExpenseFlow. All rights reserved.</p>

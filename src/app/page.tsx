@@ -79,7 +79,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-500/30">
+              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-blue-600 dark:bg-blue-500 text-white">
                 <Receipt className="w-5 h-5" />
               </div>
               <div>
@@ -131,23 +131,26 @@ export default function Home() {
             {
               icon: Zap,
               title: "AI-Powered Chatbot",
-              description: "Submit expenses, check status, and get instant answers through our intelligent chatbot assistant."
+              description: "Submit expenses, check status, and get instant answers through our intelligent chatbot assistant.",
+              color: "bg-blue-600 dark:bg-blue-500"
             },
             {
               icon: CheckCircle,
               title: "OCR Receipt Scanning",
-              description: "Upload receipts and let our OCR technology automatically extract amounts, dates, and merchant info."
+              description: "Upload receipts and let our OCR technology automatically extract amounts, dates, and merchant info.",
+              color: "bg-indigo-600 dark:bg-indigo-500"
             },
             {
               icon: Shield,
               title: "Automated Approvals",
-              description: "Smart approval workflows with role-based access for employees, managers, and administrators."
+              description: "Smart approval workflows with role-based access for employees, managers, and administrators.",
+              color: "bg-blue-700 dark:bg-blue-600"
             }
           ].map((feature, idx) => (
             <Card key={idx} className="bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-slate-200/60 dark:border-slate-800/60 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 group">
               <CardHeader>
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white mb-4 shadow-lg shadow-blue-500/30 group-hover:shadow-xl group-hover:shadow-blue-500/40 transition-all">
-                  <feature.icon className="w-6 h-6" />
+                <div className={`flex items-center justify-center w-12 h-12 rounded-xl ${feature.color} text-white mb-4 transition-all`}>
+                  <feature.icon className="w-6 h-6" strokeWidth={2} />
                 </div>
                 <CardTitle className="bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-300 dark:to-indigo-300 bg-clip-text text-transparent">{feature.title}</CardTitle>
                 <CardDescription className="text-base">

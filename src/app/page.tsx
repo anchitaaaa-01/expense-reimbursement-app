@@ -49,11 +49,11 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground">
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-muted text-muted-foreground">
                 <Receipt className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold">ExpenseFlow</h1>
+                <h1 className="text-xl font-semibold text-muted-foreground">ExpenseFlow</h1>
                 <p className="text-xs text-muted-foreground">Smart expense management</p>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function Home() {
           </h2>
           
           <p className="text-lg text-muted-foreground mb-8">
-            AI-powered chatbot assistance, OCR receipt scanning, and automated approval workflows 
+            <span className="text-muted-foreground/80">AI-powered chatbot</span> assistance, <span className="text-muted-foreground/80">OCR receipt scanning</span>, and <span className="text-muted-foreground/80">automated approval</span> workflows 
             in one simple platform.
           </p>
           
@@ -116,10 +116,10 @@ export default function Home() {
           ].map((feature, idx) => (
             <Card key={idx}>
               <CardHeader>
-                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary text-primary-foreground mb-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-muted text-muted-foreground mb-4">
                   <feature.icon className="w-6 h-6" />
                 </div>
-                <CardTitle>{feature.title}</CardTitle>
+                <CardTitle className="text-muted-foreground">{feature.title}</CardTitle>
                 <CardDescription className="text-base">
                   {feature.description}
                 </CardDescription>

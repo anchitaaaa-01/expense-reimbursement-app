@@ -82,11 +82,11 @@ export default function SignUpPage() {
       <div className="w-full max-w-md">
         {/* Logo/Brand */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground">
+          <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
             <Receipt className="w-5 h-5" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold">ExpenseFlow</h1>
+            <h1 className="text-2xl font-bold text-blue-700 dark:text-blue-300">ExpenseFlow</h1>
             <p className="text-sm text-muted-foreground">Streamline your expenses</p>
           </div>
         </div>

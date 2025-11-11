@@ -28,7 +28,7 @@ export default function Home() {
 
   if (isPending) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-950 dark:to-indigo-950">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
         <Loader2 className="w-8 h-8 text-primary animate-spin" />
       </div>
     );
@@ -36,52 +36,63 @@ export default function Home() {
 
   if (session?.user) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-950 dark:to-indigo-950">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
         <Loader2 className="w-8 h-8 text-primary animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-950 dark:to-indigo-950 relative overflow-hidden">
-      {/* Animated gradient background layers */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 relative overflow-hidden">
+      {/* Sophisticated organic background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large gradient orbs */}
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/30 to-indigo-400/30 dark:from-blue-500/20 dark:to-indigo-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-[700px] h-[700px] bg-gradient-to-tr from-purple-400/30 to-blue-400/30 dark:from-purple-500/20 dark:to-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-gradient-to-bl from-indigo-400/25 to-blue-400/25 dark:from-indigo-500/15 dark:to-blue-500/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }}></div>
+        {/* Noise texture overlay for depth */}
+        <div className="absolute inset-0 opacity-[0.015] dark:opacity-[0.02]" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '128px 128px'
+        }}></div>
+
+        {/* Organic flowing shapes */}
+        <div className="absolute -top-[30%] -right-[15%] w-[70%] h-[70%] opacity-40 dark:opacity-25">
+          <div className="w-full h-full bg-gradient-to-br from-blue-200 via-indigo-200 to-blue-300 dark:from-blue-900/40 dark:via-indigo-900/40 dark:to-blue-800/40 blur-[100px] animate-blob"></div>
+        </div>
         
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+        <div className="absolute -bottom-[30%] -left-[15%] w-[70%] h-[70%] opacity-40 dark:opacity-25">
+          <div className="w-full h-full bg-gradient-to-tr from-indigo-200 via-blue-200 to-indigo-300 dark:from-indigo-900/40 dark:via-blue-900/40 dark:to-indigo-800/40 blur-[100px] animate-blob animation-delay-2000"></div>
+        </div>
         
-        {/* Floating shapes */}
-        <div className="absolute top-20 left-[15%] w-32 h-32 bg-blue-300/20 dark:bg-blue-400/10 rounded-full blur-2xl animate-bounce" style={{ animationDuration: "3s" }}></div>
-        <div className="absolute bottom-32 right-[20%] w-40 h-40 bg-purple-300/20 dark:bg-purple-400/10 rounded-full blur-2xl animate-bounce" style={{ animationDuration: "4s", animationDelay: "1s" }}></div>
-        <div className="absolute top-1/2 left-[10%] w-24 h-24 bg-indigo-300/20 dark:bg-indigo-400/10 rounded-full blur-2xl animate-bounce" style={{ animationDuration: "5s", animationDelay: "2s" }}></div>
+        <div className="absolute top-[20%] left-[30%] w-[50%] h-[50%] opacity-30 dark:opacity-20">
+          <div className="w-full h-full bg-gradient-to-bl from-slate-200 via-blue-200 to-slate-300 dark:from-slate-800/40 dark:via-blue-900/40 dark:to-slate-800/40 blur-[80px] animate-blob animation-delay-4000"></div>
+        </div>
+
+        {/* Subtle gradient overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-transparent to-blue-50/40 dark:from-slate-950/60 dark:via-transparent dark:to-slate-900/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-50/80 via-transparent to-transparent dark:from-slate-950/80 dark:via-transparent dark:to-transparent"></div>
         
-        {/* Gradient mesh effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent dark:from-gray-900/50"></div>
+        {/* Radial gradient vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(241,245,249,0.2)_100%)] dark:bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,6,23,0.4)_100%)]"></div>
       </div>
 
       {/* Header */}
-      <header className="border-b bg-white/90 dark:bg-gray-900/90 backdrop-blur-md relative z-10 shadow-sm">
+      <header className="border-b border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl relative z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg shadow-blue-500/30">
                 <Receipt className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-blue-700 dark:text-blue-300">ExpenseFlow</h1>
+                <h1 className="text-xl font-semibold bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-300 dark:to-indigo-300 bg-clip-text text-transparent">ExpenseFlow</h1>
                 <p className="text-xs text-muted-foreground">Smart expense management</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <Link href="/sign-in">
-                <Button variant="ghost">Sign In</Button>
+                <Button variant="ghost" className="hover:bg-slate-100 dark:hover:bg-slate-800">Sign In</Button>
               </Link>
               <Link href="/sign-up">
-                <Button>Get Started</Button>
+                <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/30">Get Started</Button>
               </Link>
             </div>
           </div>
@@ -102,12 +113,12 @@ export default function Home() {
           
           <div className="flex items-center justify-center gap-3">
             <Link href="/sign-up">
-              <Button size="lg" className="gap-2 shadow-lg shadow-blue-500/20 hover:shadow-xl hover:shadow-blue-500/30 transition-all">
+              <Button size="lg" className="gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-xl shadow-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/40 transition-all">
                 Start Free Trial <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
             <Link href="/sign-in">
-              <Button size="lg" variant="outline" className="shadow-md hover:shadow-lg transition-all">
+              <Button size="lg" variant="outline" className="border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 shadow-lg transition-all">
                 Sign In
               </Button>
             </Link>
@@ -133,12 +144,12 @@ export default function Home() {
               description: "Smart approval workflows with role-based access for employees, managers, and administrators."
             }
           ].map((feature, idx) => (
-            <Card key={idx} className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border-blue-100 dark:border-blue-900/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+            <Card key={idx} className="bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-slate-200/60 dark:border-slate-800/60 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 group">
               <CardHeader>
-                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-950 dark:to-indigo-950 text-blue-700 dark:text-blue-300 mb-4 shadow-md">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white mb-4 shadow-lg shadow-blue-500/30 group-hover:shadow-xl group-hover:shadow-blue-500/40 transition-all">
                   <feature.icon className="w-6 h-6" />
                 </div>
-                <CardTitle className="text-blue-700 dark:text-blue-300">{feature.title}</CardTitle>
+                <CardTitle className="bg-gradient-to-r from-blue-700 to-indigo-700 dark:from-blue-300 dark:to-indigo-300 bg-clip-text text-transparent">{feature.title}</CardTitle>
                 <CardDescription className="text-base">
                   {feature.description}
                 </CardDescription>
@@ -170,7 +181,7 @@ export default function Home() {
                 description: "Complete system control: user management, approval rules, company-wide analytics, and chatbot support."
               }
             ].map((role, idx) => (
-              <Card key={idx} className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md border-blue-100 dark:border-blue-900/50 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+              <Card key={idx} className="bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-slate-200/60 dark:border-slate-800/60 shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
                     <span className="text-2xl">{role.emoji}</span>
@@ -187,13 +198,39 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t bg-white/90 dark:bg-gray-900/90 backdrop-blur-md mt-16 relative z-10 shadow-sm">
+      <footer className="border-t border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl mt-16 relative z-10 shadow-sm">
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-sm text-muted-foreground">
             <p>© 2024 ExpenseFlow. All rights reserved.</p>
           </div>
         </div>
       </footer>
+
+      <style jsx global>{`
+        @keyframes blob {
+          0%, 100% {
+            transform: translate(0, 0) scale(1) rotate(0deg);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1) rotate(120deg);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9) rotate(240deg);
+          }
+        }
+        
+        .animate-blob {
+          animation: blob 20s ease-in-out infinite;
+        }
+        
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
     </div>
   );
 }

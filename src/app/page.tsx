@@ -49,11 +49,11 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-muted text-muted-foreground">
+              <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300">
                 <Receipt className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-muted-foreground">ExpenseFlow</h1>
+                <h1 className="text-xl font-semibold text-teal-700 dark:text-teal-300">ExpenseFlow</h1>
                 <p className="text-xs text-muted-foreground">Smart expense management</p>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default function Home() {
           </h2>
           
           <p className="text-lg text-muted-foreground mb-8">
-            <span className="text-muted-foreground/80">AI-powered chatbot</span> assistance, <span className="text-muted-foreground/80">OCR receipt scanning</span>, and <span className="text-muted-foreground/80">automated approval</span> workflows 
+            <span className="text-teal-600 dark:text-teal-400 font-medium">AI-powered chatbot</span> assistance, <span className="text-teal-600 dark:text-teal-400 font-medium">OCR receipt scanning</span>, and <span className="text-teal-600 dark:text-teal-400 font-medium">automated approval</span> workflows 
             in one simple platform.
           </p>
           
@@ -116,10 +116,10 @@ export default function Home() {
           ].map((feature, idx) => (
             <Card key={idx}>
               <CardHeader>
-                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-muted text-muted-foreground mb-4">
+                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300 mb-4">
                   <feature.icon className="w-6 h-6" />
                 </div>
-                <CardTitle className="text-muted-foreground">{feature.title}</CardTitle>
+                <CardTitle className="text-teal-700 dark:text-teal-300">{feature.title}</CardTitle>
                 <CardDescription className="text-base">
                   {feature.description}
                 </CardDescription>
